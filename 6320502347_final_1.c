@@ -2,20 +2,16 @@
 int main(){
     int k,c,n,i,num;
     scanf("%d %d",&n,&c);
-    if(n>0&&n<32750){
+    if(n>0&&n<32750&&c>=0&&c<=9){
     int x[5];
     for(k=n+1;;k++){
         for(i=0,num=k;num>0;i++)
         num=num/10;
     if(i==1){
-        if(k!=1){
-            k+=10;
+            for(num=k,i=1;i>0;i--,num/=10)
+            x[1-i]=num%10;
+            if(c==x[0])
             break;
-            }
-        else if(k==1){
-            k==10;
-            break;
-            }
             }
     else if(i==2){
         for(num=k,i=2;i>0;i--,num/=10)
